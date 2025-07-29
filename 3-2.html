@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Picture Slideshow</title>
+</head>
+<body>
+  <h2>Image Slideshow</h2>
+  <img id="slide" src="https://t3.ftcdn.net/jpg/05/12/88/20/360_F_512882024_L6b4JyhLeWOkgVYX7D9ZJvnAGhCzdJYI.jpg" width="300" height="200"><br><br>
+  <button onclick="prev()">Prev</button>
+  <button onclick="next()">Next</button>
+
+  <script>
+    let images = [
+      "https://t3.ftcdn.net/jpg/05/12/88/20/360_F_512882024_L6b4JyhLeWOkgVYX7D9ZJvnAGhCzdJYI.jpg",
+      "https://cdn.pixabay.com/photo/2015/08/16/12/10/minion-890831_640.jpg",
+      "https://cdn.pixabay.com/photo/2014/10/31/17/41/dancing-dave-minion-510835_960_720.jpg"
+    ];
+    let index = 0;
+
+    function showImage() {
+      document.getElementById("slide").src = images[index];
+    }
+
+    function next() {
+      index = (index + 1) % images.length;
+      showImage();
+    }
+
+    function prev() {
+      index = (index - 1 + images.length) % images.length;
+      showImage();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digital Clock</title>
+</head>
+<body>
+  <h2>Digital Clock</h2>
+  <h1 id="clock"></h1>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+      document.getElementById("clock").innerText = time;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock(); // call once on load
+  </script>
+</body>
+</html>
